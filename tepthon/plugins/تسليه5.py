@@ -1,12 +1,12 @@
-# animation5 for zthon edit by ~ @zlzzl77
+# animation5 for tepthon edit by ~ @zlzzl77
 
 import asyncio
 import os
 import random
 from urllib.parse import quote_plus
 from collections import deque
-from zthon.core.logger import logging
-from zthon import zedub
+from tepthon.core.logger import logging
+from tepthon import zedub
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
@@ -14,7 +14,7 @@ plugin_category = "الترفيه"
 
 from . import ALIVE_NAME, deEmojify
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ZThon"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "tepthon"
 
 
 @zedub.zed_cmd(pattern="رقص$")
