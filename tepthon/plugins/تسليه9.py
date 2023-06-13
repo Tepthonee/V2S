@@ -6,8 +6,8 @@ import os
 import random
 from urllib.parse import quote_plus
 from collections import deque
-from zthon.core.logger import logging
-from zthon import zedub
+from tepthon.core.logger import logging
+from tepthon import zedub
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
@@ -1046,7 +1046,7 @@ async def _(event):
     animation_ttl = range(192)
     event = await edit_or_reply(event, "**ZedThon....**")
     animation_chars = [
-   "🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎??🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎**{ALIVE_NAME}**🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n",
+   "🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n??🤎??🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎**{ALIVE_NAME}**🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n",
    f"🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍**{ALIVE_NAME}**🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n",
    f"🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎**{ALIVE_NAME}**🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n",
    f"🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍**{ALIVE_NAME}**🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n",
@@ -1107,7 +1107,7 @@ async def _(event):
    f"🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎**{ALIVE_NAME}**🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n",
    f"🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍**{ALIVE_NAME}**🤍🤎🤍\n🤎🤍??🤍??🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n",
    f"🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎**{ALIVE_NAME}**🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n",
-   f"🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍**{ALIVE_NAME}**🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n",
+   f"🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎??🤎\n🤍🤎🤍**{ALIVE_NAME}**🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n",
    f"🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎**{ALIVE_NAME}**🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n",
    f"🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍**{ALIVE_NAME}**🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n",
    f"🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎**{ALIVE_NAME}**🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n",
@@ -1229,7 +1229,7 @@ async def _(event):
    f"🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎**{ALIVE_NAME}**🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n",
    f"🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍**{ALIVE_NAME}**🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎??🤎??\n",
    f"🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎**{ALIVE_NAME}**🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n",
-   f"🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍**{ALIVE_NAME}**🤍🤎🤍\n🤎🤍??🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n",
+   f"🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍**{ALIVE_NAME}**🤍🤎🤍\n??🤍??🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n",
    f"🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎**{ALIVE_NAME}**🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n",
    f"🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍**{ALIVE_NAME}**🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n",
    f"🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎**{ALIVE_NAME}**🤎🤍🤎\n🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍\n🤎🤍🤎🤍🤎🤍🤎🤍🤎🤍🤎\n",
