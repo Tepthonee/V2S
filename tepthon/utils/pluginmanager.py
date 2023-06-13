@@ -3,7 +3,7 @@ import importlib
 import sys
 from pathlib import Path
 
-from zthon import CMD_HELP, LOAD_PLUG
+from tepthon import CMD_HELP, LOAD_PLUG
 
 from ..Config import Config
 from ..core import LOADED_CMDS, PLG_INFO
@@ -21,17 +21,17 @@ def load_module(shortname, plugin_path=None):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        path = Path(f"zthon/plugins/{shortname}.py")
+        path = Path(f"tepthon/plugins/{shortname}.py")
         checkplugins(path)
-        name = "zthon.plugins.{}".format(shortname)
+        name = "tepthon.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         LOGS.info(f"تـم تثبيت ملـف {shortname}")
     else:
         if plugin_path is None:
-            path = Path(f"zthon/plugins/{shortname}.py")
-            name = f"zthon.plugins.{shortname}"
+            path = Path(f"tepthon/plugins/{shortname}.py")
+            name = f"tepthon.plugins.{shortname}"
         else:
             path = Path((f"{plugin_path}/{shortname}.py"))
             name = f"{plugin_path}/{shortname}".replace("/", ".")
@@ -58,7 +58,7 @@ def load_module(shortname, plugin_path=None):
         mod.borg = zedub
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules[f"zthon.plugins.{shortname}"] = mod
+        sys.modules[f"tepthon.plugins.{shortname}"] = mod
         LOGS.info(f"تـم تثبيت ملـف {shortname}")
 
 
@@ -82,7 +82,7 @@ def remove_plugin(shortname):
             zedub.remove_event_handler(i)
         del LOAD_PLUG[shortname]
     try:
-        name = f"zthon.plugins.{shortname}"
+        name = f"tepthon.plugins.{shortname}"
         for i in reversed(range(len(zedub._event_builders))):
             ev, cb = zedub._event_builders[i]
             if cb.__module__ == name:
