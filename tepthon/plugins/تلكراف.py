@@ -1,4 +1,4 @@
-# telegraph utils for ZThon
+# telegraph utils for tepthon
 import os
 import random
 import string
