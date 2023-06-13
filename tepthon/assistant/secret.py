@@ -4,7 +4,7 @@ import re
 
 from telethon.events import CallbackQuery
 
-from zthon import zedub
+from tepthon import zedub
 from ..sql_helper.globals import gvarstatus
 
 
