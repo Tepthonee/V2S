@@ -1,7 +1,7 @@
 from telethon.tl.functions.messages import GetMessagesViewsRequest
 import sys, asyncio
 import zthon
-from zthon import BOTLOG_CHATID, HEROKU_APP, PM_LOGGER_GROUP_ID
+from tepthon import BOTLOG_CHATID, HEROKU_APP, PM_LOGGER_GROUP_ID
 from telethon import functions
 from .Config import Config
 from .core.logger import logging
