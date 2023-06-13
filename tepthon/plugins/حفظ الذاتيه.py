@@ -3,13 +3,13 @@ import shutil
 from asyncio import sleep
 from telethon import events
 
-from zthon import zedub
-from zthon.core.logger import logging
+from tepthon import zedub
+from tepthon.core.logger import logging
 from ..helpers.utils import _format
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from ..sql_helper.echo_sql import addecho, get_all_echos, get_echos, is_echo, remove_all_echos, remove_echo, remove_echos
 
-from zthon.core.logger import logging
+from tepthon.core.logger import logging
 from . import BOTLOG, BOTLOG_CHATID
 plugin_category = "الادوات"
 LOGS = logging.getLogger(__name__)
@@ -18,7 +18,7 @@ zedself = True
 POSC = gvarstatus("Z_POSC") or "(مم|ذاتية|ذاتيه|جلب الوقتيه)"
 
 ZelzalSelf_cmd = (
-    "𓆩 [ᯓ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗭𝗧𝗵𝗼𝗻 - حفـظ الذاتيـه 🧧](t.me/ZedThon) 𓆪\n\n"
+    "𓆩 [ᯓ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗧𝗘𝗣𝗧𝗛𝗢𝗡 - حفـظ الذاتيـه 🧧](t.me/Tepthon) 𓆪\n\n"
     "**⪼** `.تفعيل الذاتيه`\n"
     "**لـ تفعيـل الحفظ التلقائي للذاتيـه**\n"
     "**سوف يقوم حسابك بحفظ الذاتيه تلقائياً في حافظة حسابك عندما يرسل لك اي شخص ميديـا ذاتيـه**\n\n\n"
@@ -26,7 +26,7 @@ ZelzalSelf_cmd = (
     "**لـ تعطيـل الحفظ التلقائي للذاتيـه**\n\n\n"
     "**⪼** `.ذاتيه`\n"
     "**بالـرد ؏ــلى صـوره ذاتيـه لحفظهـا في حال كان امر الحفظ التلقائي معطـل**\n\n"
-    "\n 𓆩 [𝙎𝙊𝙐𝙍𝘾𝞝 𝙕𝞝𝘿](t.me/ZedThon) 𓆪"
+    "\n 𓆩 [𝙎𝙊𝙐𝙍𝘾𝞝](t.me/Tepthon) 𓆪"
 )
 
 
@@ -71,7 +71,7 @@ async def sddm(event):
         sender = await event.get_sender()
         chat = await event.get_chat()
         pic = await event.download_media()
-        await zedub.send_file("me", pic, caption=f"[ᯓ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗭𝗧𝗵𝗼𝗻 - حفـظ الذاتيـه 🧧](t.me/ZEDthon) .\n\n⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆\n**⌔╎مࢪحبـاً عـزيـزي المـالك 🫂\n⌔╎ تـم حفـظ الذاتيـة تلقائيـاً .. بنجـاح ☑️** ❝\n**⌔╎المـرسـل** {_format.mentionuser(sender.first_name , sender.id)} .")
+        await zedub.send_file("me", pic, caption=f"[ᯓ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗧𝗘𝗣𝗧𝗛𝗢𝗡 - حفـظ الذاتيـه 🧧](t.me/Tepthon) .\n\n⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆\n**⌔╎مࢪحبـاً عـزيـزي المـالك 🫂\n⌔╎ تـم حفـظ الذاتيـة تلقائيـاً .. بنجـاح ☑️** ❝\n**⌔╎المـرسـل** {_format.mentionuser(sender.first_name , sender.id)} .")
 
 @zedub.zed_cmd(
     pattern="تست (\d*) ([\s\S]*)",
